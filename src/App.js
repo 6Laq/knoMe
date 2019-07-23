@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.css';
 
-import './components/signIn'
+import MessageList from './components/MessageList'
+import ContactList from './components/ContactList';
+import InputBar from './components/Input';
+
 
 export default class App extends React.Component {
   
@@ -9,7 +12,9 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <h2>Hello Wodie</h2>
+        <ContactList />
+        <MessageList />
+        <InputBar />
       </div>
     );
   }
