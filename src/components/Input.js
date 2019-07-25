@@ -14,6 +14,8 @@ class InputBar extends React.Component {
   }
 
   handleSubmit(event) {
+    const input = this.state.value;
+    console.log(input);
     event.preventDefault();
   }
 
@@ -22,7 +24,12 @@ class InputBar extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" placeholder="message" value={this.state.value} onChange={this.handleChange} />
+            <input
+              type="text" 
+              placeholder="message" 
+              value={this.state.value} 
+              onChange={this.handleChange}
+              />
           </label>
         </form>
       </div>
