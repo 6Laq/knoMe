@@ -14,22 +14,25 @@ class InputBar extends React.Component {
   }
 
   handleSubmit(event) {
-    const input = this.state.value;
-    console.log(input);
     event.preventDefault();
+    const input = this.state.value;
+    this.props.message(input)
+    this.setState({value: ''})
   }
+  
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} >
           <label>
-            <input
-              type="text" 
-              placeholder="message" 
-              value={this.state.value} 
-              onChange={this.handleChange}
-              />
+
+          <input
+            onChange={this.handleChange}
+            value={this.state.value}
+            placeholder="Type your message"
+            type="text" 
+          />
           </label>
         </form>
       </div>
